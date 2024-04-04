@@ -70,10 +70,7 @@ class MainMenu:
         }
 
     def get_menu(self):
-        return [
-            self.get_menu_item(item)
-            for item in self.get_items()
-        ]
+        return [self.get_menu_item(item) for item in self.get_items()]
 
 
 class PreviewMainMenu(MainMenu):

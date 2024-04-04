@@ -50,8 +50,12 @@ class MenuTests(TestCase, WagtailTestUtils):
         self.eventlisting.add_child(instance=self.eventpage)
 
     def _build_menu(self):
-        SecondaryMenuItem.objects.create(page=self.eventlisting, text="Menu One", sort_order=0)
-        SecondaryMenuItem.objects.create(page=self.eventpage, text="Menu Two", sort_order=1)
+        SecondaryMenuItem.objects.create(
+            page=self.eventlisting, text="Menu One", sort_order=0
+        )
+        SecondaryMenuItem.objects.create(
+            page=self.eventpage, text="Menu Two", sort_order=1
+        )
 
     def test_admin_menu_item_index(self):
         response = self.client.get("/admin/utils/secondarymenuitem/")
@@ -71,9 +75,5 @@ class MenuTests(TestCase, WagtailTestUtils):
         self._build_menu()
         menu_items = SecondaryMenuItem.objects.order_by("sort_order").all()
         response = self.client.get("/")
-        self.assertContains(
-            response, "Menu Two".format(), count=1
-        )
-        self.assertContains(
-            response, "Menu One".format(), count=1
-        )
+        self.assertContains(response, "Menu Two".format(), count=1)
+        self.assertContains(response, "Menu One".format(), count=1)

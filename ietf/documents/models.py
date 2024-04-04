@@ -1,4 +1,3 @@
-
 from wagtail.documents.models import Document
 
 

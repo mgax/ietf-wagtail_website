@@ -37,9 +37,10 @@ class BlogFeed(Feed):
     def item_pubdate(self, item):
         return item.date
 
+
 class TopicBlogFeed(BlogFeed):
     def __call__(self, request, *args, **kwargs):
-        self.topic = kwargs.get('topic')
+        self.topic = kwargs.get("topic")
         return super().__call__(request, *args, **kwargs)
 
     def items(self):
@@ -49,6 +50,7 @@ class TopicBlogFeed(BlogFeed):
             .annotate(d=Coalesce("date_published", "first_published_at"))
             .order_by("-d")
         )
+
 
 class AuthorBlogFeed(BlogFeed):
     def __init__(self, person, queryset):
