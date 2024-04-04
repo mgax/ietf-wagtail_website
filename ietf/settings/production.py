@@ -1,5 +1,4 @@
 import os
-import sys
 
 from .base import *
 
@@ -122,6 +121,6 @@ if 'ERROR_LOG' in env:
     LOGGING['loggers']['django.security']['handlers'].append('errors_file')
 
 try:
-    from .local import *    # pyflakes:ignore
+    from .local import *  # pyflakes:ignore
 except ImportError:
     pass

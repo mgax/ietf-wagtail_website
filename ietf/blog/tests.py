@@ -1,7 +1,7 @@
 from datetime import timedelta
-from django.utils import timezone
 
 from django.test import TestCase
+from django.utils import timezone
 from wagtail.models import Page, Site
 
 from ..home.models import HomePage
