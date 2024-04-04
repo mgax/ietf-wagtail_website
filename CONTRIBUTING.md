@@ -12,6 +12,14 @@ See the [installation instructions](README.md#install)
 
 Wagtail is based on Django, and there are many Django-style tests typically named `tests.py` to test templates. These verify that the templates can be compiled (that they don't have syntax errors) and that they are inserting variables.
 
+### Linting
+
+To ensure a uniform code style, this project uses [black](https://black.readthedocs.io/en/stable/) and [ruff](https://docs.astral.sh/ruff/). You can install the [pre-commit](https://pre-commit.com) hook to run them automatically when making a git commit:
+
+```bash
+pre-commit install
+```
+
 ## Frontend Development
 
 This project uses Bootstrap. The exact version is specified in the `package.json` file.
