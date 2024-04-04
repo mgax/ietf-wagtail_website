@@ -30,7 +30,9 @@ class HomePageBase:
     def blog_index(self):
         return BlogIndexPage.objects.live().first()
 
-    def blogs(self, bp_kwargs={}):
+    def blogs(self, bp_kwargs=None):
+        if bp_kwargs is None:
+            bp_kwargs = {}
         return (
             BlogPage.objects.live()
             .filter(**bp_kwargs)
@@ -88,7 +90,9 @@ class HomePage(Page, HomePageBase):
     def blog_index(self):
         return BlogIndexPage.objects.live().first()
 
-    def blogs(self, bp_kwargs={}):
+    def blogs(self, bp_kwargs=None):
+        if bp_kwargs is None:
+            bp_kwargs = {}
         return (
             BlogPage.objects.live()
             .filter(**bp_kwargs)
@@ -155,7 +159,9 @@ class IABHomePage(Page):
     def blog_index(self):
         return BlogIndexPage.objects.live().first()
 
-    def blogs(self, bp_kwargs={}):
+    def blogs(self, bp_kwargs=None):
+        if bp_kwargs is None:
+            bp_kwargs = {}
         entries = []
         try:
             response = get_request(settings.IAB_FEED_URL)

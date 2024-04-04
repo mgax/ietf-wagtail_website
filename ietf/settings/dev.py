@@ -1,3 +1,5 @@
+import contextlib
+
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -14,7 +16,5 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = True
 
-try:
+with contextlib.suppress(ImportError):
     from .local import *
-except ImportError:
-    pass

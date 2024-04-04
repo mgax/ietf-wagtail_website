@@ -73,7 +73,7 @@ class MenuTests(TestCase, WagtailTestUtils):
 
     def test_menu_in_template(self):
         self._build_menu()
-        menu_items = SecondaryMenuItem.objects.order_by("sort_order").all()
+        SecondaryMenuItem.objects.order_by("sort_order").all()
         response = self.client.get("/")
         self.assertContains(response, "Menu Two".format(), count=1)
         self.assertContains(response, "Menu One".format(), count=1)
