@@ -47,7 +47,7 @@ class BlogTests(TestCase):
             date_published=(now - timedelta(minutes=10)),
         )
         self.blog_index.add_child(instance=self.otherblog)
-        self.otherblog.save
+        self.otherblog.save()
 
         self.prevblog = BlogPage(
             slug="prevpost",

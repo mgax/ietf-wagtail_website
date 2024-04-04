@@ -1,6 +1,6 @@
 import contextlib
 
-from .base import *
+from .base import *  # noqa: F403
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -17,4 +17,4 @@ CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = True
 
 with contextlib.suppress(ImportError):
-    from .local import *
+    from .local import *  # noqa: F403
