@@ -4,23 +4,50 @@
 #
 #    pip-compile dev.in
 #
+black==24.3.0
+    # via -r dev.in
 build==1.0.3
     # via pip-tools
+cfgv==3.4.0
+    # via pre-commit
 click==8.1.7
-    # via pip-tools
+    # via
+    #   black
+    #   pip-tools
 coverage[toml]==7.3.2
-    # via pytest-cov
+    # via
+    #   coverage
+    #   pytest-cov
+distlib==0.3.8
+    # via virtualenv
+filelock==3.13.3
+    # via virtualenv
+identify==2.5.35
+    # via pre-commit
 iniconfig==2.0.0
     # via pytest
+mypy-extensions==1.0.0
+    # via black
+nodeenv==1.8.0
+    # via pre-commit
 packaging==23.2
     # via
     #   -c base.txt
+    #   black
     #   build
     #   pytest
+pathspec==0.12.1
+    # via black
 pip-tools==7.3.0
     # via -r dev.in
+platformdirs==4.2.0
+    # via
+    #   black
+    #   virtualenv
 pluggy==1.3.0
     # via pytest
+pre-commit==3.7.0
+    # via -r dev.in
 pyproject-hooks==1.0.0
     # via build
 pytest==7.4.3
@@ -31,6 +58,12 @@ pytest-cov==4.1.0
     # via -r dev.in
 pytest-django==4.7.0
     # via -r dev.in
+pyyaml==6.0.1
+    # via pre-commit
+ruff==0.3.5
+    # via -r dev.in
+virtualenv==20.25.1
+    # via pre-commit
 wheel==0.42.0
     # via pip-tools
 
